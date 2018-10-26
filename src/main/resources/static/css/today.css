@@ -1,0 +1,97 @@
+@media screen and (min-width: 768px) {
+    .vintage4{
+        font-size: 50px;
+        color: rgba(253, 175, 11, 0.99);
+        letter-spacing: 0;
+        text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+    }
+}
+@media screen and (max-width: 768px) {
+    .vintage4{
+        font-size: 35px;
+        color: rgba(253, 175, 11, 0.99);
+        letter-spacing: 0;
+        text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+    }
+
+}
+.head{
+    text-align: center;
+    margin: 30px auto 30px;
+}
+.h1Word{
+    line-height: 10px;
+}
+.content{
+    margin: 0 8%;
+
+}
+.sendBtn{
+    float: right;
+    display: inline-block;
+}
+#picture{
+     display: inline-block;
+     height: 32px;
+     width: 68px;
+     /*opacity: 0;*/
+    z-index: 30;
+}
+.me a{
+    color: red;
+    position: absolute;
+    left: 17px;
+    margin-top: 3px;
+    z-index: 2;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.sayTitle{
+    color: #dd514c !important;
+    background-color: rgba(221, 81, 76, 0.33) !important;
+    border-color: #f5cecd!important;
+    text-align: center;
+}
+#iSay{
+    height: 150px;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    background-color: hsla(0,0%,71%,.1);
+}
+.says .time h1{
+    font-size: 40px;
+}
+.sayContent{
+    margin-top: 100px;
+}
+.timeline-wrap{
+    border-left: 3px solid #ad7b3a;
+    margin-bottom: 50px;
+    margin-left: 40px;
+}
+.timeline-row-major{
+    margin: 20px 0;
+}
+.timeline-row-major .node{
+    width: 12px;
+    color: #fff;
+    height: 12px;
+    border-radius: 50%;
+    margin: 11px 0 0 -8px;
+    display: inline-block;
+    background-color: #ad7b3a;
+    float: left;
+}
+.say{
+    background-color: #f90;
+    margin-left: 40px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    padding: 20px 0 20px 10px;
+}
+.todayTime{
+    font-size: 20px;
+}
