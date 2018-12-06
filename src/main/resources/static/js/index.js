@@ -1,8 +1,8 @@
 
-    $('.yesterday').click(function () {
-       window.open("/yesterday")
-    });
+$('.yesterday').click(function () {
+    window.location.replace("/yesterday")
+})
 
-    $('.today').click(function () {
-        window.open("/today")
-    });
+$('.today').click(function () {
+    window.location.replace("/today")
+});
