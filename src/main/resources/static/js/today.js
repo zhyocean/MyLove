@@ -28,19 +28,17 @@ $('.moods i').click(function () {
 });
 
 var last = 0;
+var yearArray = new Array();
+var monthArray = new Array();
 function putInAllTodayInfo(data, pageInfo) {
-    // $('.says').empty();
-    // $('.saysButton').empty();
     var says = $('.says');
-    var yearArray = new Array();
-    var monthArray = new Array();
     $.each(data, function (index, obj) {
         var date = new Date(obj['publishDate']);
         var year = date.getFullYear();
         var month = date.getMonth() + 1;
         var day = date.getDate();
-        var hour = date.getHours();
-        var minute = date.getMinutes();
+        var hour = date.getHours() >= 10 ? date.getHours() : '0' + date.getHours();
+        var minute = date.getMinutes() >= 10 ? date.getMinutes() : '0' + date.getMinutes();
         if($.inArray(year, yearArray) == -1){
             yearArray.push(year);
             monthArray.splice(0);
@@ -91,6 +89,10 @@ function putInAllTodayInfo(data, pageInfo) {
     if(pageInfo['isLastPage'] == true){
         last++;
     }
+    // 放大图片
+    $(function () {
+        $('.says img').zoomify();
+    });
 }
 
 
@@ -169,7 +171,3 @@ function getTodayInfo(currentPage) {
 }
 
 getTodayInfo(1);
-// 放大图片
-$(function () {
-    $('.says img').zoomify();
-});
