@@ -11,6 +11,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -72,8 +73,6 @@ public class TodayServiceImpl implements TodayService {
         returnJson.put("status", 200);
         returnJson.put("result", jsonArray);
         returnJson.put("pageInfo", pageJson);
-
-        System.out.println("TodayInfo：" + returnJson);
 
         return returnJson;
     }

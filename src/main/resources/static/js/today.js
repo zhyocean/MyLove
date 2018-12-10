@@ -74,10 +74,7 @@ function putInAllTodayInfo(data, pageInfo) {
         if(typeof(obj['picsUrl']) !== "undefined" && obj['picsUrl'].length > 0){
             var todayPic = $('<div class="todayPic"></div>');
             for(var i=1;i<=obj['picsUrl'].length;i++){
-                todayPic.append('<img src="' + obj['picsUrl'][i-1] + '">');
-                if(i%3 == 0){
-                    todayPic.append('<br>');
-                }
+                todayPic.append('<p class="todayPicP" data-src="' + obj['picsUrl'][i-1] + '"><img src="' + obj['picsUrl'][i-1] + '"></p>');
             }
         }
         say.append(todayPic);
@@ -89,10 +86,23 @@ function putInAllTodayInfo(data, pageInfo) {
     if(pageInfo['isLastPage'] == true){
         last++;
     }
-    // 放大图片
-    $(function () {
-        $('.says img').zoomify();
+
+    //放大图片
+    $(document).ready(function() {
+        $(".todayPic").lightGallery({
+            thumbnail   : true,
+            controls    : true,
+            mode   : 'slide',
+            loop:false,  //循环播放图片
+            auto:false,
+            escKey           : true,
+            pause:4000,
+            hideControlOnEnd : false,
+            lang : { allPhotos: 'All photos' },
+            counter     : true
+        });
     });
+
 }
 
 
@@ -109,6 +119,7 @@ $('.sendBtn').click(function (event) {
     } else {
         if(moods.hasClass('happy') || moods.hasClass('just')  || moods.hasClass('terrible')){
             var formData = new FormData(uploadForm);
+            console.log($('#iSay').val())
             formData.append("mood",moodStr.substring(moodStr.indexOf(" ")+1));
             $.ajax({
                 type: 'post',
@@ -127,6 +138,7 @@ $('.sendBtn').click(function (event) {
                         alert(data['message']);
                     } else {
                         alert(data['message']);
+                        $("#picture").replaceWith('<input id="picture" name="picture" type="file" multiple="multiple" onchange="readAsDataURL()" accept=".gif,.jpg,.jpeg,.png"><a class="am-icon-heart am-icon-sm"> 图片</a>');
                         window.location.reload()
                     }
                 },
